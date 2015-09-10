@@ -1,0 +1,18 @@
+<h1>New Blog</h1>
+
+<%= form_for @blog_form do |f| %>
+  <% if @blog_form.errors.any? %>
+  <ul>
+    <% @blog_form.errors.each do |_, msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+  <% end %>
+  
+  <p>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </p>
+  
+  <%= f.submit %>
+<% end %>
